@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+      {% for post in posts %}
+        <div class="col-lg-4">
+          <div class="card" style="width: 18rem;">
+            <img src="{{post.image.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><b>({{post.id}})</b>{{post.title}}</h5>
+              <i class="card-title">{{post.date_added}}</i><br/>
+              <a href="{% url 'detail' post.pk %}" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    </div>
+{% endblock content %}
+
+{% block title %}
+HomePage- Nirdesh
+{% endblock title %}
